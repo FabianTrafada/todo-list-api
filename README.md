@@ -211,3 +211,6 @@ bun start
 - **JWT** - Authentication tokens
 - **bcrypt** - Password hashing
 - **Bun** - Runtime and package manager
+
+## Project Idea
+[Roadmap](https://roadmap.sh/projects/todo-list-api)

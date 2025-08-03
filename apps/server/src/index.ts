@@ -2,6 +2,9 @@ import "dotenv/config";
 import cors from "cors";
 import express from "express";
 
+import authRoutes from "./routers/authRoutes";
+import toDoRouter from "./routers/toDoRoutes";
+
 const app = express();
 
 app.use(
@@ -11,15 +14,10 @@ app.use(
   })
 );
 
+app.use(express.json());
 
-
-
-app.use(express.json())
-
-
-app.get("/", (_req, res) => {
-  res.status(200).send("OK");
-});
+app.use("/auth", authRoutes);
+app.use("/todos", toDoRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
